@@ -2,6 +2,7 @@ import React, { ComponentType, ReactElement } from 'react'
 
 export type ReactElementJSON = {
   type: string
+  component?: ComponentType
   props: Record<string, any>
   children: (ReactElementJSON | null)[] | null
   value?: any
@@ -34,6 +35,7 @@ export default function reactElementToJson<T>(
       typeof type === 'string'
         ? type
         : type.name || ((type as ComponentType).displayName as string),
+    component: typeof type === 'string' ? undefined : type,
     props: { ...props, key, children: undefined },
     children,
   }

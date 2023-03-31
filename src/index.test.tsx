@@ -55,6 +55,15 @@ test("string children", () => {
   expect(child?.value).toBe('test')
 });
 
+test("get component", () => {
+  const jsx = <Node/>
+
+  const output = reactElementToJson(jsx)
+  assert.isNotNull(output)
+
+  expect(output?.component).toBe(Node);
+});
+
 interface NodeProps {
   prop1?: string
   prop2?: number
