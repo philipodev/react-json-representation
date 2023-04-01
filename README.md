@@ -14,7 +14,7 @@ This function takes a react element and returns an json/object representation of
 
 ```jsx
 
-import reactElementToJson from 'react-json-representation`
+import reactElementToJson from 'react-json-representation'
 
 const jsx = <Page value="Something">
   <Section color="red">
